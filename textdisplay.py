@@ -30,6 +30,7 @@ class TextDisplay:
         self.screen.attributes("-fullscreen", True)
         self.screen.bind("<F11>", self.toggle_fullscreen)
         self.screen.bind("<Escape>", self.end_fullscreen)
+        self.screen.bind("<Control-c>", self.quit)
         self.text = ""
         if font_size != 0 and not self.typing_mode:
             self.font_size = font_size
@@ -51,6 +52,9 @@ class TextDisplay:
         else:
             self.screen.after(self.delay, self.tick, self.delay)
         self.screen.mainloop()
+
+    def quit(self, event):
+        exit()
 
     def textbox_focus(self, event):
         self.textbox.configure(insertbackground=self.text_colour)
@@ -158,7 +162,8 @@ if __name__ == "__main__":
 
 
     def parse_command_line(description):
-        parser = argparse.ArgumentParser(description="%(prog)s " + description)
+        parser = argparse.ArgumentParser(description="%(prog)s " + description,
+                                         epilog="CTRL-C to exit. ESC or F11 to toggle fullscreen.")
         if ".py" in sys.argv[0]:
             parser.add_argument("--install", action="store_true", dest="install", default=False,
                                 help="install to Linux destination path (default: " + install_path + ")")
