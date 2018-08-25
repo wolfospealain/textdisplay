@@ -26,4 +26,6 @@ optional arguments:
   -s SIZE, --font-size SIZE
                         font size (default: auto)
   -t, --typing-mode     direct entry mode (F5 to automatically resize text)
+
+CTRL-C to exit. ESC or F11 to toggle fullscreen.
 ```
