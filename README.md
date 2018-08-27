@@ -33,19 +33,32 @@ ESC to exit, or F11 to toggle fullscreen.
 ```
 ## Use Cases
 Signage.
+
 Impromptu/backup signage.
+
 Multiple monitors
+
 Live feed displays (e.g. train arrivals/departures).
+
 System monitoring.
+
 "Out of Order" computer notice.
+
 Personal computer/office notices.
+
 Countdowns, timers.
+
 Teacher presentations.
+
 GUI output for Python text programs.
+
 Add a desktop shortcut key for "/usr/local/bin/textdisplay -t" for instant notices.
 
 ### Linux Command-Line Examples
 Calendar ```ncal -h | ./textdisplay.py -p -f courier```
+
 Ping ```ping 8.8.8.8 | ./textdisplay.py  -l 1 -p -c cyan```
+
 Fortune ```while true; do fortune -s; sleep 60; done | ./textdisplay.py -l 1 -p -c yellow```
+
 Uptime ```while true; do uptime; sleep 1; done | ./textdisplay.py -l 1 -p -c orange -d 30000```
